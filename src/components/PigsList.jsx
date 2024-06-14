@@ -4,7 +4,6 @@ import Filter from "./Filter";
 import Sort from "./Sort"
 
 function PigsList ({hogs}) {
-  console.log("pigList:" , hogs)
   const [filteredPigs, setFilteredPigs] = useState("All")
   const [sortPigsCatergory, setSortPigsCatergory] = useState("All")
 

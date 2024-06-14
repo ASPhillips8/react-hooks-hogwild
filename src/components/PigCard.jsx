@@ -4,7 +4,6 @@ function PigCard ({hog}) {
   const{name, image, greased, specialty, weight, "highest medal achieved":medal } = hog
   const [isSelected, setIsSelected] = useState(false)
 
-
   function handlePigClick () {
     setIsSelected((isSelected) => !isSelected)
   }
@@ -16,7 +15,6 @@ function PigCard ({hog}) {
       <p>Greased:{greased? " Yes " : " Get the grease "}</p>
       <p>Highest Medal: <span style={{ color: medal }}>{medal}</span></p>
     </div>
-
   )
 
   return (
