@@ -8,12 +8,7 @@ function PigsList ({hogs}) {
     return (
       <PigTile
         key={hog.name}
-        name={hog.name}
-        image={hog.image}
-        specialty={hog.specialty}
-        weight={hog.weight}
-        greased={hog.greased}
-        medal={hog["highest meal achieved"]}
+        hog={hog}
       />
     )
   })
