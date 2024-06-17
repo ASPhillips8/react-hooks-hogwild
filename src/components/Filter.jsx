@@ -1,7 +1,6 @@
 import React from "react";
 
-function Filter ({onCategoryChange}) {
-
+function Filter ({ onCategoryChange }) {
   return (
     <div className="Filter">
       <select name="filter" onChange={onCategoryChange}>
@@ -11,7 +10,7 @@ function Filter ({onCategoryChange}) {
       </select>
       <label>GREASED STATUS</label>
     </div>
-);
+  );
 }
 
 export default Filter

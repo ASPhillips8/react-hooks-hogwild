@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-function PigCard ({hog}) {
+function PigCard ({ hog }) {
   const{name, image, greased, specialty, weight, "highest medal achieved":medal } = hog
   const [isSelected, setIsSelected] = useState(false)
 

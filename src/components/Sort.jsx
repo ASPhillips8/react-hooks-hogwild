@@ -2,7 +2,6 @@ import React from "react";
 
 
 function Sort ({onSortChange}) {
-
   return (
     <div className="Filter">
       <label>Sort</label>

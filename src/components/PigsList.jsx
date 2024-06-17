@@ -1,11 +1,11 @@
-import React , {useState} from "react";
+import React , { useState } from "react";
 import PigCard from "./PigCard";
 import Filter from "./Filter";
 import Sort from "./Sort"
 
-function PigsList ({hogs}) {
+function PigsList ({ hogs }) {
   const [filteredPigs, setFilteredPigs] = useState("All")
-  const [sortPigsCatergory, setSortPigsCatergory] = useState("All")
+  const [sortPigsCategory, setSortPigsCategory] = useState("All")
 
   function filterGreasedPigs(hogs, filteredPigs ) {
     return hogs.filter((hog) => {
@@ -13,19 +13,22 @@ function PigsList ({hogs}) {
         return hog.greased
       } else if (filteredPigs === "Not Greased") {
         return !hog.greased
+      } else {
+        return true
       }
-      return true
     })
   }
 
-  function sortPigs(filteredGreasedPigs, sortPigsCatergory) {
+  function sortPigs(filteredGreasedPigs, sortPigsCategory) {
     let sortedPigs = [...filteredGreasedPigs]
-    if (sortPigsCatergory === "Name") {
+
+    if (sortPigsCategory === "Name") {
       return sortedPigs.sort((a,b) => a.name.localeCompare(b.name))
-    } else if (sortPigsCatergory === "Weight") {
+    } else if (sortPigsCategory === "Weight") {
       return sortedPigs.sort((a,b) => a.weight - b.weight)
     }
-      return sortedPigs
+
+    return sortedPigs
   }
 
   function handleGreasedCategoryChange(event) {
@@ -33,11 +36,11 @@ function PigsList ({hogs}) {
   }
 
   function handleSortingPigs(event) {
-    setSortPigsCatergory(event.target.value)
+    setSortPigsCategory(event.target.value)
   }
 
   const filteredGreasedPigs = filterGreasedPigs(hogs, filteredPigs)
-  const sortedPigs = sortPigs(filteredGreasedPigs, sortPigsCatergory)
+  const sortedPigs = sortPigs(filteredGreasedPigs, sortPigsCategory)
 
   const listOfPigs = sortedPigs.map((hog) => {
     return (
